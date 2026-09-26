@@ -3,6 +3,7 @@ import { EraView } from "./views/EraView.tsx";
 import { FormView } from "./views/FormView.tsx";
 import { GeoView } from "./views/GeoView.tsx";
 import { useUrlState } from "./hooks/useUrlState.ts";
+import { SeriesBar, SeriesFooter } from "./components/Brand.tsx";
 
 const VIEWS = [
   { id: "era", label: "時代", hint: "1978–2023", ready: true },
@@ -20,6 +21,7 @@ export function App() {
   return (
     <div className="min-h-dvh">
       <header className="border-b border-rule bg-paper/85 backdrop-blur-sm">
+        <SeriesBar />
         <div className="mx-auto flex w-full max-w-[1240px] flex-wrap items-end justify-between gap-4 px-6 pt-5">
           <div>
             <h1 className="text-[15px] font-semibold tracking-tight">
@@ -63,12 +65,7 @@ export function App() {
         出典: 総務省「住宅・土地統計調査」（社会・人口統計体系「Ｈ　居住」経由、e-Stat）。
         単位は住宅数とその構成比・率。空き家率の分母は総住宅数、持ち家・建て方比率の分母は居住世帯あり住宅。
         世帯類型ダッシュボード（「日本人はどう暮らしてきたか」）と対になるが、分母は接続しない。
-        <a
-          href="https://visualizing.jp/"
-          className="mt-2 block w-fit transition-colors duration-150 hover:text-muted"
-        >
-          visualizing.jp
-        </a>
+        <SeriesFooter />
       </footer>
     </div>
   );
